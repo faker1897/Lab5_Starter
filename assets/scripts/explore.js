@@ -7,7 +7,9 @@ function init() {
 
     const voice_selector = document.getElementById("voice-select");
     const synth = window.speechSynthesis;
-    selector_add(voice_selector,synth)
+    synth.addEventListener("voiceschanged", () => {
+        selector_add(voice_selector, synth);
+    })
     const button = document.querySelector("button");
     button.addEventListener("click",()=>play_sound(voice_selector,synth))
 
