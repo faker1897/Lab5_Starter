@@ -7,6 +7,8 @@ function init() {
 
     const voice_selector = document.getElementById("voice-select");
     const synth = window.speechSynthesis;
+      // Added this line of code on May 12
+    selector_add(voice_selector, synth);
     synth.addEventListener("voiceschanged", () => {
         selector_add(voice_selector, synth);
     })
